@@ -1,0 +1,39 @@
+{
+  "name": "ento",
+  "version": "1.0.0",
+  "description": "A microengine for small games",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c",
+    "watch": "rollup -c -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/attilahorvath/ento.git"
+  },
+  "keywords": [
+    "game",
+    "engine",
+    "microengine",
+    "entity",
+    "component",
+    "system",
+    "ecs",
+    "webgl"
+  ],
+  "author": "Attila Horváth",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/attilahorvath/ento/issues"
+  },
+  "homepage": "https://github.com/attilahorvath/ento#readme",
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "rollup": "^1.22.0",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-terser": "^5.1.2"
+  }
+}
