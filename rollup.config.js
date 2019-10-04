@@ -1,3 +1,4 @@
+import glsl from 'rollup-plugin-glsl';
 import { terser } from 'rollup-plugin-terser';
 import { eslint } from 'rollup-plugin-eslint';
 
@@ -10,6 +11,9 @@ export default {
     format: 'iife'
   },
   plugins: [
+    glsl({
+      include: 'shaders/**/*.{vert,frag}'
+    }),
     release && eslint(),
     release && terser()
   ]

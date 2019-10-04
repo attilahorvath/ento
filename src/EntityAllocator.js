@@ -2,11 +2,9 @@ import EntityIndex from './EntityIndex';
 
 export default class {
   constructor(capacity) {
-    this.entities = new Array(capacity).fill();
-
-    this.entities.forEach((_, i) => {
-      this.entities[i] = { active: false, generation: 0 };
-    });
+    this.entities = [...Array(capacity)].map(() => (
+      { active: false, generation: 0 }
+    ));
   }
 
   allocate() {

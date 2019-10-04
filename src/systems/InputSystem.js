@@ -10,8 +10,8 @@ export default class SpriteSystem {
     this.left = false;
     this.right = false;
 
-    addEventListener('keydown', (event) => this.keyDown(event));
-    addEventListener('keyup', (event) => this.keyUp(event));
+    document.addEventListener('keydown', (event) => this.keyDown(event));
+    document.addEventListener('keyup', (event) => this.keyUp(event));
   }
 
   keyDown(event) {
@@ -65,11 +65,11 @@ export default class SpriteSystem {
       const position = this.game.fetchComponent(entityIndex, ComponentTypes.Position);
 
       if (this.up) {
-        position.y += 0.1 * deltaTime;
+        position.y -= 0.1 * deltaTime;
       }
 
       if (this.down) {
-        position.y -= 0.1 * deltaTime;
+        position.y += 0.1 * deltaTime;
       }
 
       if (this.left) {

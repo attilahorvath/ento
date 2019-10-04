@@ -4,15 +4,19 @@ import EntityAllocator from './EntityAllocator';
 import Renderer from './Renderer';
 
 export default class {
-  constructor() {
-    this.allocator = new EntityAllocator(10);
-    this.state = new State(10);
+  constructor(opts = { maxEntities: 10, width: 300, height: 150 }) {
+    this.maxEntities = opts.maxEntities;
+    this.width = opts.width;
+    this.height = opts.height;
+
+    this.allocator = new EntityAllocator(this.maxEntities);
+    this.state = new State(this.maxEntities);
 
     Object.keys(ComponentTypes).forEach((type) => {
       this.state.register(ComponentTypes[type]);
     });
 
-    this.renderer = new Renderer();
+    this.renderer = new Renderer(this.width, this.height);
 
     this.systems = [];
 
@@ -55,7 +59,7 @@ export default class {
   }
 
   addSystem(type) {
-    this.systems.push(new type(this));
+    this.systems.push(new type(this)); // eslint-disable-line new-cap
   }
 
   run() {
