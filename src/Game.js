@@ -4,7 +4,7 @@ import EntityAllocator from './EntityAllocator';
 import Renderer from './Renderer';
 
 export default class {
-  constructor(opts = { maxEntities: 10, width: 300, height: 150 }) {
+  constructor(opts = { maxEntities: 1000, width: 300, height: 150 }) {
     this.maxEntities = opts.maxEntities;
     this.width = opts.width;
     this.height = opts.height;

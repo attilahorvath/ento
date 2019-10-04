@@ -61,6 +61,6 @@ export default class {
 
     shader.use(this.gl);
 
-    this.gl.drawArrays(this.gl.TRIANGLES, 0, count);
+    this.gl.drawArrays(this.gl.POINTS, 0, count);
   }
 }

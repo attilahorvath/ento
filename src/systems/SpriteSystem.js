@@ -18,59 +18,17 @@ export default class SpriteSystem {
       const position = this.game.fetchComponent(entityIndex, ComponentTypes.Position);
 
       /* eslint-disable no-plusplus */
-      this.vertices[i++] = position.x;
-      this.vertices[i++] = position.y;
+      this.vertices[i++] = position.x + sprite.width / 2.0;
+      this.vertices[i++] = position.y + sprite.height / 2.0;
       this.vertices[i++] = 0.0;
 
-      this.vertices[i++] = 1.0;
-      this.vertices[i++] = 0.0;
-      this.vertices[i++] = 0.0;
-      this.vertices[i++] = 1.0;
+      this.vertices[i++] = sprite.width;
+      this.vertices[i++] = sprite.height;
 
-      this.vertices[i++] = position.x + sprite.width;
-      this.vertices[i++] = position.y;
-      this.vertices[i++] = 0.0;
-
-      this.vertices[i++] = 0.0;
-      this.vertices[i++] = 1.0;
-      this.vertices[i++] = 0.0;
-      this.vertices[i++] = 1.0;
-
-      this.vertices[i++] = position.x;
-      this.vertices[i++] = position.y + sprite.height;
-      this.vertices[i++] = 0.0;
-
-      this.vertices[i++] = 0.0;
-      this.vertices[i++] = 0.0;
-      this.vertices[i++] = 1.0;
-      this.vertices[i++] = 1.0;
-
-      this.vertices[i++] = position.x + sprite.width;
-      this.vertices[i++] = position.y;
-      this.vertices[i++] = 0.0;
-
-      this.vertices[i++] = 0.0;
-      this.vertices[i++] = 1.0;
-      this.vertices[i++] = 0.0;
-      this.vertices[i++] = 1.0;
-
-      this.vertices[i++] = position.x;
-      this.vertices[i++] = position.y + sprite.height;
-      this.vertices[i++] = 0.0;
-
-      this.vertices[i++] = 0.0;
-      this.vertices[i++] = 0.0;
-      this.vertices[i++] = 1.0;
-      this.vertices[i++] = 1.0;
-
-      this.vertices[i++] = position.x + sprite.width;
-      this.vertices[i++] = position.y + sprite.height;
-      this.vertices[i++] = 0.0;
-
-      this.vertices[i++] = 1.0;
-      this.vertices[i++] = 1.0;
-      this.vertices[i++] = 0.0;
-      this.vertices[i++] = 1.0;
+      this.vertices[i++] = sprite.red;
+      this.vertices[i++] = sprite.green;
+      this.vertices[i++] = sprite.blue;
+      this.vertices[i++] = sprite.alpha;
       /* eslint-enable no-plusplus */
     }
 

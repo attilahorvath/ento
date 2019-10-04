@@ -2,35 +2,25 @@ import Game from './Game';
 import SpriteSystem from './systems/SpriteSystem';
 import InputSystem from './systems/InputSystem';
 
+import aStarTest from './aStarTest';
+
 const game = new Game();
 
 game.addSystem(InputSystem);
 game.addSystem(SpriteSystem);
 
-game.createEntity({
-  Tilemap: {},
-});
+aStarTest(game);
 
 game.createEntity({
   Position: {
-    x: 20,
-    y: 10,
+    x: 200,
+    y: 100,
   },
   Sprite: {
     width: 10,
     height: 10,
-  },
-  Input: {},
-});
 
-game.createEntity({
-  Position: {
-    x: 50,
-    y: 30,
-  },
-  Sprite: {
-    width: 10,
-    height: 20,
+    blue: 0.0,
   },
   Input: {},
 });
